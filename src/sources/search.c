@@ -839,7 +839,7 @@ main_loop:
         if (!root_node && best_score > -MATE_FOUND) {
             // Late Move Pruning. For low-depth nodes, stop searching quiets after a certain
             // movecount has been reached.
-            if (depth <= 10 && move_count >= lmp_threshold(depth, improving)) {
+            if (move_count >= lmp_threshold(depth, improving)) {
                 skip_quiets = true;
             }
 
