@@ -932,6 +932,10 @@ main_loop:
                 extension = 1;
             }
         }
+        // Low Depth Singular Extensions
+        else if (depth <= 7 && !in_check && eval <= alpha - 25 && cut_node) {
+            extension = 1;
+        }
 
         // Save the piece history for the current move so that sub-nodes can use it for ordering
         // moves.
