@@ -732,7 +732,7 @@ Score search(
 
     // Probcut. If we have a good enough capture (or promotion) and a reduced search returns a value
     // much above beta, we can (almost) safely prune the previous move.
-    const Score probcut_beta = beta + 152;
+    const Score probcut_beta = beta + 152 - 30 * improving;
 
     if (!root_node && depth >= 6 && i16_abs(beta) < VICTORY
         && !(tt_found && tt_depth >= depth - 4 && tt_score < probcut_beta)) {
