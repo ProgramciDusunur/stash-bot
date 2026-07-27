@@ -884,7 +884,7 @@ main_loop:
             // the TT score. If that's not the case, we consider the TT move to be singular, and we
             // extend non-LMR searches by one or two lies, depending on the margin that the singular
             // search failed low.
-            if (depth >= 7 && currmove == tt_move && !ss->excluded_move && (tt_bound & LOWER_BOUND)
+            if (depth >= 5 && currmove == tt_move && !ss->excluded_move && (tt_bound & LOWER_BOUND)
                 && i16_abs(tt_score) < VICTORY && tt_depth >= depth - 3) {
                 const Score singular_beta = tt_score - 10 * depth / 16;
                 const i16 singular_depth = depth / 2 + 1;
